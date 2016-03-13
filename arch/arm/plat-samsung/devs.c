@@ -487,19 +487,6 @@ void __init s5p_fimd1_set_platdata(struct s3c_fb_platdata *pd)
 }
 #endif /* CONFIG_S5P_DEV_FIMD1 */
 
-#ifdef CONFIG_FB_S5P_EXTDSP
-struct platform_device s5p_device_extdsp = {
-	.name		= "s3cfb_extdsp",
-	.id		= 0,
-};
-
-void __init s3cfb_extdsp_set_platdata(struct s3c_fb_pd_win *pd)
-{
-	s3c_set_platdata(pd, sizeof(struct s3c_fb_pd_win),
-			 &s5p_device_extdsp);
-}
-#endif
-
 #ifdef CONFIG_FB_MIC
 static struct resource s5p_mic_resource[] = {
 	[0] = DEFINE_RES_MEM(S5P_PA_MIC, SZ_128),
@@ -1943,7 +1930,7 @@ struct platform_device exynos5_device_g3d = {
 		.coherent_dma_mask	= DMA_BIT_MASK(32),
 	},
 };
-#endif /*CONFIG_MALI_T6XX*/
+#endif /* CONFIG_MALI_T6XX || CONFIG_MALI_MIDGARD_WK04 */
 struct platform_device exynos4_device_g3d = {
 	.name	= "mali_dev",
 	.id		= 0,

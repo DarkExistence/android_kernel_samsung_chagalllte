@@ -88,7 +88,6 @@ extern struct platform_device s5p_device_jpeg;
 extern struct platform_device s5p_device_g2d;
 extern struct platform_device s5p_device_fimd0;
 extern struct platform_device s5p_device_fimd1;
-extern struct platform_device s5p_device_extdsp;
 extern struct platform_device s5p_device_mipi_dsim0;
 extern struct platform_device s5p_device_mipi_dsim1;
 extern struct platform_device s5p_device_dp;
@@ -193,7 +192,11 @@ extern struct platform_device samsung_device_keypad;
 
 extern struct platform_device s5p_device_fimg2d;
 extern struct platform_device s5p_device_usbswitch;
+<<<<<<< HEAD
 #if defined(CONFIG_MALI_T6XX) || defined(CONFIG_MALI_MIDGARD_WK04) || defined(CONFIG_PVR_SGX)
+=======
+#if defined(CONFIG_MALI_T6XX) || defined(CONFIG_PVR_SGX) || defined(CONFIG_MALI_MIDGARD_WK04)
+>>>>>>> 9452a1a... Import samsung LL kernel source
 extern struct platform_device exynos5_device_g3d;
 #endif
 extern struct platform_device exynos5410_device_tmu;
